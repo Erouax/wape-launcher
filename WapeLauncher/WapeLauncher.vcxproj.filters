@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cx">
+      <UniqueIdentifier>{b19d4d97-554d-40a0-9b63-3ed81c6b5bc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pcg">
+      <UniqueIdentifier>{956864de-ab99-484e-8820-60df670abaa4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="winmain.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="api_cache.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="segment_resource.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="driver.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_alloc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="process.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minecraft.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern_scan.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="remote_lib_loader.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="api_cache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_chartbl.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_crc32.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_fnv1.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_obf_addr.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_pcg32.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_strenc.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_utils.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="pcg32.h">
+      <Filter>Header Files\pcg</Filter>
+    </ClInclude>
+    <ClInclude Include="winheaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="segment_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="minecraft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern_scan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="remote_lib_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="vmware.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="memory.h">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+function OpenDirectory(title)
+  local directory = GetDirectory(title, "Directories\n*", BIF_RETURNONLYFSDIRS | BIF_USENEWUI)
+  if directory == null then
+    return null
+  end
+  return directory
+end
+
+function SetTimeStamp(target, time)
+  file_header = GetOffset(target, PE_FileHeader)
+  WriteDword(target, file_header + 4, time) -- TimeDateStamp
+end
+
+function replace_string(target, data, length)
+  offset = SearchBytes(target, 0, data)
+  while offset != null do
+    FillBytes(target, offset, length, 0)
+    offset = SearchBytes(target, offset + 1, data)
+  end
+end
+
+local target_name = GetOpenFile("Open...", "Native\n*.exe;*.dll\n", OFN_FILEMUSTEXIST)
+if target_name == null then
+  return null
+end
+
+local resource_dir = OpenDirectory("Select Resources Directory...")
+if resource_dir == null then
+  return
+end
+
+RealignPE(target_name, 0x200)
+RemoveDebugDirectory(target_name)
+SetTimeStamp(target_name, 1493645587)
+
+local srch_handle = InitFindFile(resource_dir .. "\\*")
+if srch_handle then
+  local file_name = FindFile(srch_handle)
+
+  while file_name do
+    if file_name != "." and file_name != ".." then
+      local file_path = resource_dir .. "\\" .. file_name
+
+      AddSectionWithData(target_name, file_path, file_name, 0x40000040)
+    end
+
+    file_name = FindFile(srch_handle)
+  end
+end
+
+-- string too long
+replace_string(target_name, { 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x20, 0x74, 0x6f, 0x6f, 0x20, 0x6c, 0x6f, 0x6e, 0x67 }, 15)
+-- invalid string position
+replace_string(target_name, { 0x69, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x20, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x20, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e }, 23)
+-- vector too long
+replace_string(target_name, { 0x76, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x3c, 0x54, 0x3e, 0x20, 0x74, 0x6f, 0x6f, 0x20, 0x6c, 0x6f, 0x6e, 0x67 }, 18)
+-- list too long
+replace_string(target_name, { 0x6c, 0x69, 0x73, 0x74, 0x3c, 0x54, 0x3e, 0x20, 0x74, 0x6f, 0x6f, 0x20, 0x6c, 0x6f, 0x6e, 0x67 }, 16)
+
+-- WapeDll.dll
+replace_string(target_name, { 0x57, 0x61, 0x70, 0x65, 0x44, 0x6c, 0x6c, 0x2e, 0x64, 0x6c, 0x6c }, 11)
+-- WapeLauncher.dll
+replace_string(target_name, { 0x57, 0x61, 0x70, 0x65, 0x4c, 0x61, 0x75, 0x6e, 0x63, 0x68, 0x65, 0x72, 0x2e, 0x64, 0x6c, 0x6c }, 16)
+
+RebuildPEHeader(target_name)
+UpdateChecksum(target_name)
+
+MsgBox("Done")

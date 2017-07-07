@@ -1,0 +1,18 @@
+function OpenDirectory(title)
+  local directory = GetDirectory(title, "Directories\n*", BIF_RETURNONLYFSDIRS | BIF_USENEWUI)
+  if directory == null then
+    return null
+  end
+  return directory
+end
+
+local target_name = GetOpenFile("Open...", "Native\n*.exe;*.dll\n", OFN_FILEMUSTEXIST)
+if target_name == null then
+  return null
+end
+
+local entrypoint = ReadDword(target_name, 0x68)
+WriteDword(target_name, 0x68, entrypoint + 0x31337)
+RebuildPEHeader(target_name)
+UpdateChecksum(target_name)
+MsgBox("Done")

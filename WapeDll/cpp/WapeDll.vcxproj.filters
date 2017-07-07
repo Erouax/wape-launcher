@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cx">
+      <UniqueIdentifier>{df98d3c3-70af-465e-b338-25bf41260e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pcg">
+      <UniqueIdentifier>{478db3c3-a3a3-42e0-b704-5d1116a55eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\loader">
+      <UniqueIdentifier>{e1073b72-4e67-4543-8293-510e98a2e28b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\loader">
+      <UniqueIdentifier>{3e5c3cc9-1054-4702-a9a5-009f86c15506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\app">
+      <UniqueIdentifier>{dcc49835-126e-487c-ba80-632273fc87a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{b550efe1-0ff9-4eb4-affe-2321d03a95ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="api_cache.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reflective_loader.cc">
+      <Filter>Source Files\loader</Filter>
+    </ClCompile>
+    <ClCompile Include="driver.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_alloc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_main.cc">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="jvm.cc">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern_scan.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="java_thread.cc">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="class_loader.cc">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="minecraft.cc">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="segment_resource.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memsearch.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="process.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="api_cache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_utils.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_chartbl.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_crc32.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_fnv1.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_obf_addr.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_pcg32.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="cx_strenc.h">
+      <Filter>Header Files\cx</Filter>
+    </ClInclude>
+    <ClInclude Include="winheaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pcg32.h">
+      <Filter>Header Files\pcg</Filter>
+    </ClInclude>
+    <ClInclude Include="reflective_loader.h">
+      <Filter>Header Files\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_main.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="jvm.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="virtual_func.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern_scan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="java_thread.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="class_loader.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="minecraft.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="segment_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memsearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="vmware.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>
